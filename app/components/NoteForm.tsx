@@ -8,6 +8,7 @@ import { generateUniqueId } from "../utils";
 const NoteForm: React.FC<{}> = () => {
   const [message, setMessage] = useState<string>("");
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [textareaChar, setTextareaChar] = useState<number>(0);
   const [addNoteQuery] = useAddNoteMutation();
 
   const formik = useFormik({
@@ -25,8 +26,17 @@ const NoteForm: React.FC<{}> = () => {
       setSubmitted(true);
       formik.values.title = "";
       formik.values.content = "";
+      setTextareaChar(0);
     },
   });
+
+  const handleCustomChangeTextarea = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    formik.handleChange(e);
+    setTextareaChar(e.currentTarget.value.length);
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setSubmitted(false);
@@ -50,7 +60,7 @@ const NoteForm: React.FC<{}> = () => {
         <input
           type="text"
           name="title"
-          className=" text-sm  w-full p-2.5 border border-gray-300 "
+          className=" text-sm  w-full p-2.5 border border-gray-300 rounded"
           placeholder="Bonnie Green"
           onChange={formik.handleChange}
           value={formik.values.title}
@@ -60,30 +70,34 @@ const NoteForm: React.FC<{}> = () => {
             <span className="font-medium">{formik.errors.title}</span>
           </p>
         )}
-        <div>
-          <label htmlFor="content" className="block my-2 text-sm font-medium ">
-            Note
-          </label>
-          <textarea
-            name="content"
-            rows={4}
-            className="block p-2.5 w-full  text-sm border border-gray-300"
-            placeholder="Write a Note..."
-            onChange={formik.handleChange}
-            value={formik.values.content}
-          />
+
+        <label htmlFor="content" className="block my-2 text-sm font-medium ">
+          Note
+        </label>
+        <textarea
+          name="content"
+          rows={4}
+          className="block p-2.5 w-full  text-sm border border-gray-300 rounded"
+          placeholder="Write a Note..."
+          onChange={handleCustomChangeTextarea}
+          value={formik.values.content}
+        />
+        <div className="flex justify-between items-center">
+          <div>
+            {formik.errors.content && formik.touched.content && (
+              <p className=" text-sm text-red-600 dark:text-red-500">
+                <span className="font-medium">{formik.errors.content}</span>
+              </p>
+            )}
+          </div>
+          <p className="text-xs font-normal  ">{textareaChar}/100</p>
         </div>
-        {formik.errors.content && formik.touched.content && (
-          <p className="mt-2 text-sm text-red-600 dark:text-red-500">
-            <span className="font-medium">{formik.errors.content}</span>
-          </p>
-        )}
         <div className="float-right mt-5">
           <button
             type="submit"
             className="add-btn sm:text-sm sm:font-normal active:bg-blue-400"
           >
-            Add Note
+            Submit
           </button>
         </div>
       </form>

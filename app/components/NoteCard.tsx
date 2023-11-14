@@ -15,7 +15,7 @@ const NoteCard: React.FC<PropsType> = (props) => {
   };
 
   return (
-    <div className="flex justify-start gap-2 w-full px-4 py-2 shadow hover:bg-slate-300  sm:h-30 active:bg-slate-300">
+    <div className="flex justify-start gap-2 w-full px-4 py-2 shadow hover:bg-slate-300  sm:max-h-28 active:bg-slate-300">
       <div className="w-[10%] flex sm:items-center sm:my-1 py-1 md:mt-0 ">
         <input
           type="checkbox"
@@ -25,8 +25,10 @@ const NoteCard: React.FC<PropsType> = (props) => {
         />
       </div>
       <div className="">
-        <h2 className=" font-semibold">{title}</h2>
-        <h4 className="text-sm font-light">{content}</h4>
+        <h2 className=" font-semibold capitalize">{title}</h2>
+        <h4 className="text-sm font-light first-letter:capitalize">
+          {content}
+        </h4>
       </div>
     </div>
   );

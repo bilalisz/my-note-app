@@ -12,6 +12,7 @@ export const notesApi = createApi({
   endpoints: (builder) => ({
     getAllNotes: builder.query({
       query: (name) => `/${name}`,
+      transformResponse:(res:any)=>res.reverse(),
       providesTags:["notes"]
      
     }),

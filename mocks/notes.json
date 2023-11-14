@@ -1,21 +1,6 @@
 {
   "notes": [
     {
-      "id": "2",
-      "title": "title 2",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod."
-    },
-    {
-      "id": "3",
-      "title": "title 3",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod."
-    },
-    {
-      "title": "Title-13",
-      "content": "n this example, the textarea element is connected to Formik using the formik.handleChange",
-      "id": "16999662618075c79oyzx"
-    },
-    {
       "title": "Title-10",
       "content": "This is new title 10",
       "id": "1699966610268addspqcs"
@@ -24,6 +9,21 @@
       "title": "title-15",
       "content": "My New note ",
       "id": "16999666314882ra7ds8h"
+    },
+    {
+      "title": "Typescript",
+      "content": "typescript is development tool to static type checking.\n",
+      "id": "1699976357191wa68vmul"
+    },
+    {
+      "title": "Nextjs 13.4",
+      "content": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor laoreet rutrum faucibus laore.",
+      "id": "1699977546327g9ae86gu"
+    },
+    {
+      "title": "new note",
+      "content": "Changes behavior of IOS list type. When true and swipe is done beyond threshold and released ",
+      "id": "1699982526789q4xx7o8o"
     }
   ]
 }
