@@ -82,7 +82,7 @@ const NoteForm: React.FC<{}> = () => {
           onChange={handleCustomChangeTextarea}
           value={formik.values.content}
         />
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-2">
           <div>
             {formik.errors.content && formik.touched.content && (
               <p className=" text-sm text-red-600 dark:text-red-500">
