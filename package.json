@@ -3,23 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server --watch mocks/notes.json"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
     "@types/node": "20.9.0",
     "@types/react": "18.2.37",
+    "@types/react-beautiful-dnd": "^13.1.7",
     "@types/react-dom": "18.2.15",
     "autoprefixer": "10.4.16",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.2",
-    "next": "14.0.2",
+    "formik": "^2.4.5",
+    "json-server": "^0.17.4",
+    "next": "^13.4.19",
     "postcss": "8.4.31",
     "react": "18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "18.2.0",
+    "react-redux": "^8.1.3",
     "tailwindcss": "3.3.5",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "yup": "^1.3.2"
   }
 }
