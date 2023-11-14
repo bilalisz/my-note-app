@@ -9,21 +9,12 @@ import {
   useDeleteNoteMutation,
   useGetAllNotesQuery,
 } from "../redux/features/api/notes.api";
-import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { SerializedError } from "@reduxjs/toolkit";
 
 type PropsType = {
   data?: NOTES[];
 };
 
 const ListView: React.FC<PropsType> = () => {
-  // const [notes, setNotes] = useState<NOTES[]>([]);
-
-  // useEffect(() => {
-  //   if (data.length) {
-  //     setNotes(data);
-  //   }
-  // }, []);
   const { data, isError, isLoading, error } = useGetAllNotesQuery("notes");
   const [deleteNote] = useDeleteNoteMutation();
 
@@ -85,7 +76,7 @@ const ListView: React.FC<PropsType> = () => {
             </Droppable>
           </div>
         ) : isError ? (
-          <TextMessage text={"Error in API"} />
+          <TextMessage text="Error in fetch api" />
         ) : isLoading ? (
           <TextMessage text="Loading..." />
         ) : null}
