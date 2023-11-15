@@ -6,11 +6,6 @@
       "id": "1699966610268addspqcs"
     },
     {
-      "title": "title-15",
-      "content": "My New note ",
-      "id": "16999666314882ra7ds8h"
-    },
-    {
       "title": "Typescript",
       "content": "typescript is development tool to static type checking.\n",
       "id": "1699976357191wa68vmul"
@@ -21,9 +16,14 @@
       "id": "1699977546327g9ae86gu"
     },
     {
-      "title": "new note",
-      "content": "Changes behavior of IOS list type. When true and swipe is done beyond threshold and released ",
-      "id": "1699982526789q4xx7o8o"
+      "title": "New task",
+      "content": "The concept of extracting Tailwind utility classes into higher-level CSS classes seems like it makes",
+      "id": "1699984458173esikxklm"
+    },
+    {
+      "title": "new task -1",
+      "content": " Both terms convey the idea of something being done with a purpose or deliberate intent.",
+      "id": "1700034443492fdbalabn"
     }
   ]
 }
