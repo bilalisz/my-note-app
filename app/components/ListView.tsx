@@ -38,13 +38,16 @@ const ListView: React.FC<PropsType> = () => {
   return (
     <DragDropContext onDragEnd={handleDragEnd} onDragUpdate={handleDragUpdate}>
       <div className=" shadow-md w-full mx-4   sm:w-[65%] h-[85vh]">
-        <ListNavbar />
+        <ListNavbar
+          title="Note List"
+          buttonProps={{ name: "Add Note", link: "/add-note" }}
+        />
         {!isLoading && !isError ? (
           <div className="   overflow-auto w-full  h-[76vh]">
             <Droppable droppableId="notes">
               {(provided) => (
                 <div
-                  className="px-2 py-1 flex flex-col gap-3 my-3 "
+                  className="px-2 py-1 flex flex-col gap-3"
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                 >
@@ -70,6 +73,7 @@ const ListView: React.FC<PropsType> = () => {
                       </Draggable>
                     );
                   })}
+
                   {provided.placeholder}
                 </div>
               )}
